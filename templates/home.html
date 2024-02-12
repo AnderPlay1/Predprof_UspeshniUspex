@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> uspeh </title>
+    <link rel="shortcut icon" href="static/img/cool_guy.png">
+    <meta name="theme-color" content="#7952b3">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<!--     <link rel="stylesheet" href="../static/css/style_home.css">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_home.css') }}">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+    </style>
+    <style>
+  body {
+    background-image: url(/static/img/back1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
+</head>
+<body>
+<nav class="navbar">
+    <a class="navbar-name" href="/">Uspeshniy Uspeh Investment</a>
+    <div class="navbar">
+        <p style="margin-top: 15px;"> <a href="/sign_in" style="text-decoration: none; color: #fff;"> {{ username }} </a></p>
+        <canvas width="10" height="1"></canvas>
+        <img src="{{ url_for('static', filename='img/user.png') }}" width="30" height="30" style="margin-right: 10px">
+    </div>
+</nav>
+<main role="main">
+    <div class="container marketing">
+        <canvas class="my-4 w-100"  width="900" height="10"></canvas>
+
+        <figure style="text-align: center; background: #002D60; padding: 10px; margin: 0 280px 0 280px; border-radius: 12px;    ">
+                <a href="/analytics/SBER" style="text-decoration: none;"><h1>Зафиксировать прибыль</h1></a>
+        </figure>
+            <p style="text-align: center;">Добро пожаловать в Uspeshniy Uspeh Investment! Спасибо, что выбрали нас.</p>
+
+    <canvas class="my-4 w-100" width="900" height="0"></canvas>
+
+
+        <hr class="featurette-divider">
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">Uspeshniy Uspeh Investment<br><span
+                        class="text-muted">Мы серьезная компания.</span></h2>
+                <p class="lead">Наша компания занимается предоставлением консультационных услуг в сфере инвестиций. Мы занимаемся торговей валют и ценных бумаг много часов и предоставляем высококласнные качественные услуги</p>
+
+            </div>
+            <div class="col-md-5">
+                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+                     height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
+                     focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title>
+                    <rect width="100%" height="100%"></rect>
+                    <image x="0" y="0" width="100%" href="static/img/comp.jpg"></image>
+                </svg>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading">Uspeshniy Uspeh Investment<br><span
+                        class="text-muted">Мы серьезная компания.</span></h2>
+                <p class="lead">Мы давно изучаем рынок торговли валютами и ценными бумагами,
+                    поэтому наши высококвалифицированные специалисты с наибольшей вероятностью предложат вам наиболее выгодную стратегию для действий на биржевом поле.
+                    Разработанные нашей командой стратегии проверены временем, а главное показывают преимущество в сравнении с конкурентами.</p>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+                     height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
+                     focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title>
+                    <rect width="100%" height="100%"></rect>
+                    <image x="0" y="0" width="100%" href="static/img/profs.jpg"></image>
+                </svg>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">Uspeshniy Uspeh Investment<br><span class="text-muted">Мы серьезная компания.</span></h2>
+                <p class="lead">Наш сайт интуитивно понятен и доступен любому пользователю. Указать параметры и получить интересующие результаты не составит труда.
+                Простой и понятный интерфейс, набор всех необходимых функций и подробная пошаговая стратегия дадут вам возможность плавно и успешно войти в мир инвестиций.</p>
+            </div>
+            <div class="col-md-5">
+                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+                     height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
+                     focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title>
+                    <rect width="100%" height="100%"></rect>
+                    <image x="0" y="0" width="100%" href="static/img/inter.jpg"></image>
+                </svg>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+    </div>
+    <footer>
+    @2024 - Uspeshniy Uspeh Investment. Все права зарегистрированы.
+</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8">
+<!--    <link rel="stylesheet" href="../static/css/sign_in.css">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sign_in.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> uspeh </title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/cool_guy.png') }}">
+    <meta name="theme-color" content="#7952b3">
+      <style>
+          body {
+            background-image: url(/static/img/back1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+          }
+        </style>
+  </head>
+  <body>
+      <nav class="navbar">
+        <a class="navbar-name" href="/">Uspeshniy Uspeh Investment</a>
+        <div class="navbar">
+            <p> <a href="/sign_in"style="text-decoration: none; color: #fff;"> {{ username }} </a></p>
+            <canvas width="10" height="1"></canvas>
+            <img src="{{ url_for('static', filename='img/user.png') }}" width="30" height="30" style="margin-right: 10px">
+        </div>
+
+      </nav>
+      <h1 style="color: #ffffff; margin-top: 250px; text-align: center;"> {{ username }}, go back to the previous page, please</h1>
+  </body>
+</html>

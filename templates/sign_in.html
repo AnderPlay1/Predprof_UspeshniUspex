@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/sign_in.css') }}">
+<!--    <link rel="stylesheet" href="../static/css/sign_in.css">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> uspeh </title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/cool_guy.png') }}">
+    <meta name="theme-color" content="#7952b3">
+      <style>
+          body {
+            background-image: url(/static/img/back1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+          }
+        </style>
+  </head>
+  <body>
+      <nav class="navbar">
+        <a class="navbar-name" href="/">Uspeshniy Uspeh Investment</a>
+        <div class="navbar">
+            <p> <a href="/sign_in"style="text-decoration: none; color: #fff;  margin-top: 5px;"> {{ username }} </a></p>
+            <canvas width="10" height="1"></canvas>
+            <img src="{{ url_for('static', filename='img/user.png') }}" width="30" height="30" style="margin-right: 10px">
+        </div>
+
+      </nav>
+      <div class="main">
+          <img src="{{ url_for('static', filename='img/cool_guy.gif') }}" width="70" height="70" style="border-radius: 30%">
+          <h1 style="color: #ffffff;">Sign in</h1>
+          <div class="in">
+              <form class="login_form" method="post">
+                  <input type="text" class="username" name="username" placeholder="Name">
+                  <br>
+                  <input type="email" class="email" id="email" aria-describedby="emailHelp" placeholder="Email address" name="email">
+                  <br>
+                  <input type="password" class="password" id="password" placeholder="Password" name="password">
+                  <br>
+                  <button type="submit" class="sign_in" style="font-family: Arial Black; font-size: 1rem; font-weight: 400;">Sign in</button>
+              </form>
+          </div>
+      </div>
+  </body>
+</html>

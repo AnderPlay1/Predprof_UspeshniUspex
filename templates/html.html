@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<!--    <link rel="stylesheet" href="../static/css/orig.css">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/orig.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> uspeh </title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/cool_guy.png') }}">
+    <meta name="theme-color" content="#7952b3">
+</head>
+<body>
+<nav class="navbar">
+        <a class="navbar-name" href="/">Uspeshniy Uspeh Investment</a>
+        <div class="navbar">
+            <p> <a href="/sign_in"style="text-decoration: none; color: #fff;"> {{ username }} </a></p>
+            <canvas width="10" height="1"></canvas>
+            <img src="{{ url_for('static', filename='img/user.png') }}" width="30" height="30" style="margin-right: 10px">
+        </div>
+
+      </nav>
+
+
+<div class="container">
+  <div class="row">
+    <nav id="sidebarMenu" class="sidebar">
+      <div class="position-sticky pt-3" style="margin-left: 15px">
+        <ul class="nav flex-column">
+            {% for company in comps %}
+                <li class="nav-item">
+                    {% set company_way = "img/logo/" + company + ".png" %}
+                    <img src="{{ url_for('static', filename=company_way) }}" width="25" height="23" style="float: left; margin-top: 8px; margin-right: 3px;">
+                    <a class="nav-link active" aria-current="page" href="/analytics/{{ company }}">
+                            {{ company }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+      </div>
+    </nav>
+
+    <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+          <div class="company-name">
+            <h1> {{ name }} </h1>
+          </div>
+        <details open>
+          <summary>О компании</summary>
+          <p>{{ company_description }}</p>
+        </details>
+        <hr size="1" color="#3269aa">
+        <figur>
+            {% set graph_way = "img/" + companyPeriod + ".jpg" %}
+            <img src="{{ url_for('static', filename=graph_way) }}" width="1100" height="715">
+            <figcaption>
+                <form class="login_form" method="post">
+                <div class="buttons" style="margin-top: 10px;">
+
+                    <select class="select-css form-control" id="classSelect" name="class" style="height: 40px; margin-top: 7px; width: auto;">
+                      <option> 1 hour </option>
+                      <option> 1 day </option>
+                      <option> 1 week </option>
+                      <option> 1 month </option>
+                    </select>
+
+                    <canvas class="my-4 w-100" width="10" height="0"></canvas>
+                    <table>
+
+                        <thead>
+                            <th>Start</th>
+                            <th style="vertical-align: center; background-color: none;"><input type="date" id="start" name="start" value="2022-22-02" min="2000-01-01" max="2024-02-03" /></th>
+
+                        </thead>
+                        <tfoot>
+                            <th >Finish</th>
+                            <th style="vertical-align: center;"><input type="date" id="finish" name="finish" value="2022-22-02" min="2000-01-01" max="2024-02-03" /></th>
+                        </tfoot>
+                    </table>
+                    <canvas class="my-4 w-100" width="200" height="0"></canvas>
+                    <p style="float: right;">Использовать свою стратегию: <input type="file" class="form-control-file" id="strategy" name="strat"></p>
+                    <button type="submit" class="btn btn-primary" style="height: 30px; margin-top: 15px;" >Submit</button>
+                </div>
+                </form>
+            </figcaption>
+        </figur>
+
+
+
+        <hr size="1" color="#3269aa">
+      <h2>Strategy</h2>
+      <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th>Date/candle num.</th>
+              <th>Buy/sell</th>
+              <th>Spent/gained</th>
+              <th>Profit per share</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in strategy[0] %}
+                <tr>
+                    {% for i in range(3) %}
+                        {% if i == 0 or i == 2 %}
+                            <td> {{ row[i] }} </td>
+                        {% else %}
+                            {% if row[i] > 0 %}
+                                <td> Sell </td>
+                                <td style="color: #04ab24"> {{ row[i] }} </td>
+                            {% elif row[i] < 0 %}
+                                <td> Buy </td>
+                                <td style="color: #dd0711"> {{ row[i] }} </td>
+                            {% else %}
+                                <td> - </td>
+                                <td> {{ row[i] }} </td>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+          </tbody>
+
+        </table>
+
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th rowspan="2">Total:</th>
+              <th></th>
+              <th></th>
+              <th>{{ strategy[3] }}</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+        <hr size="1" color="#3269aa">
+    </main>
+  </div>
+<div id="triangle_up"></div>
+</div>
+
+
+
+</body>
+<footer>
+    @2024 - Uspeshniy Uspeh Investment. Все права зарегистрированы.
+</footer>
+</html>
